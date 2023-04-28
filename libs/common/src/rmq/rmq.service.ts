@@ -12,7 +12,7 @@ export class RmqService {
       options: {
         urls: [this.configService.get<string>('RABBIT_MQ_URI')], // config uri of rabbitmq
         queue: this.configService.get<string>(`RABBIT_MQ_${queue}_QUEUE`), // config name of queue
-        noAck,
+        noAck, // false for handle message manual
         persistent: true,
       },
     };
